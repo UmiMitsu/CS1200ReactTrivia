@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./CreateTriviaQuestion.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function CreateTriviaQuestion() {
   const [question, setQuestion] = useState("");
   const [difficulty, setDifficulty] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="ctq-wrapper">
       {/* Top Header */}
       <div className="ctq-header">
-        <button className="ctq-back">&lt;</button>
+        <button className="ctq-back" onClick={() => navigate("/")}>&lt;</button>
         <h2>Create Trivia Questions</h2>
       </div>
 
